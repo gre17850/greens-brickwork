@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://greens-brickwork.vercel.app/sitemap.xml
