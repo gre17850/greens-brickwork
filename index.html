@@ -111,19 +111,19 @@
     img{max-width:100%;display:block}
     .container{max-width:var(--max);margin:0 auto;padding:0 24px}
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px}
+    .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;white-space:nowrap}
     .logo span{color:var(--brick)}
     .nav-links{display:none;gap:28px;font-weight:500;font-size:.95rem}
     .nav-links a:hover{color:var(--brick)}
-    .nav-cta{display:inline-block;padding:10px 18px;background:var(--ink);color:#fff;border-radius:var(--radius);font-weight:600;font-size:.9rem;transition:background .2s}
+    .nav-cta{display:inline-block;padding:10px 18px;background:var(--ink);color:#fff;border-radius:var(--radius);font-weight:600;font-size:.9rem;transition:background .2s;white-space:nowrap}
     .nav-cta:hover{background:var(--brick)}
     @media(min-width:880px){.nav-links{display:flex}}
     .hero{padding:80px 0 100px;background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(247,244,239,.6) 100%),radial-gradient(60% 50% at 80% 20%, rgba(168,54,44,.06) 0%, rgba(255,255,255,0) 70%)}
     .hero-grid{display:grid;gap:48px;align-items:center}
-    .hero h1{font-size:clamp(2.1rem, 5vw, 3.6rem);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-bottom:18px}
+    .hero h1{font-size:clamp(1.85rem, 5vw, 3.6rem);line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-bottom:18px}
     .hero h1 .accent{color:var(--brick)}
-    .hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:60ch;margin-bottom:32px}
+    .hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:60ch;margin-bottom:32px;line-height:1.6}
     .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:32px;font-size:.95rem;color:var(--muted)}
     .hero-meta span{display:inline-flex;align-items:center;gap:8px}
     .hero-meta svg{width:18px;height:18px;color:var(--brick)}
@@ -140,8 +140,8 @@
     @media(min-width:880px){.hero-grid{grid-template-columns:1.05fr 1fr}}
     section{padding:80px 0}
     .section-eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brick);margin-bottom:12px}
-    .section-title{font-size:clamp(1.7rem, 3.5vw, 2.4rem);line-height:1.15;letter-spacing:-.01em;font-weight:800;margin-bottom:16px;max-width:30ch}
-    .section-lead{font-size:1.05rem;color:var(--ink-soft);max-width:62ch;margin-bottom:48px}
+    .section-title{font-size:clamp(1.55rem, 3.5vw, 2.4rem);line-height:1.18;letter-spacing:-.01em;font-weight:800;margin-bottom:16px;max-width:30ch}
+    .section-lead{font-size:1.02rem;color:var(--ink-soft);max-width:62ch;margin-bottom:48px;line-height:1.6}
     .trust-strip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
     .trust-row{display:grid;gap:16px;grid-template-columns:repeat(2, 1fr);align-items:center}
     .trust-item{display:flex;align-items:center;gap:10px;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
@@ -187,7 +187,7 @@
     details.faq .faq-body{padding:0 24px 22px;color:var(--muted)}
     #contact{background:var(--bg)}
     .contact-grid{display:grid;gap:48px}
-    .contact-info h2{font-size:clamp(1.7rem, 3.5vw, 2.4rem);line-height:1.15;letter-spacing:-.01em;font-weight:800;margin-bottom:16px}
+    .contact-info h2{font-size:clamp(1.55rem, 3.5vw, 2.4rem);line-height:1.18;letter-spacing:-.01em;font-weight:800;margin-bottom:16px}
     .contact-info p{color:var(--ink-soft);margin-bottom:28px;max-width:50ch}
     .contact-methods{display:grid;gap:18px}
     .contact-method{display:flex;gap:14px;align-items:center}
@@ -218,6 +218,69 @@
     .mobile-whatsapp{background:#25D366;color:#fff;box-shadow:0 12px 28px -8px rgba(37,211,102,.55)}
     .mobile-call svg,.mobile-whatsapp svg{width:24px;height:24px}
     @media(min-width:880px){.mobile-actions{display:none}}
+
+    /* Mobile optimisation */
+    @media(max-width:700px){
+      .container{padding:0 22px}
+      .nav{padding:12px 0}
+      .logo{font-size:.98rem}
+      .nav-cta{padding:8px 14px;font-size:.82rem}
+      .hero{padding:42px 0 56px}
+      .hero-grid{gap:32px}
+      .hero h1{font-size:1.8rem;line-height:1.2;margin-bottom:14px}
+      .hero p.lead{font-size:.98rem;line-height:1.55;margin-bottom:22px}
+      .hero-meta{gap:12px;font-size:.85rem;margin-bottom:22px}
+      .hero-meta svg{width:16px;height:16px}
+      .cta-row{gap:10px}
+      .btn{padding:11px 18px;font-size:.94rem}
+      .hero-visual{aspect-ratio:5/4}
+      .hero-visual .placeholder-label{padding:22px}
+      .hero-visual .placeholder-label > div:first-child{font-size:.62rem}
+      .hero-visual .placeholder-label strong{font-size:1.05rem;line-height:1.3}
+      section{padding:54px 0}
+      .trust-strip{padding:18px 0}
+      .trust-row{gap:12px}
+      .trust-item{font-size:.83rem;line-height:1.3;gap:8px}
+      .section-title{font-size:1.5rem;line-height:1.2;margin-bottom:12px}
+      .section-lead{font-size:.96rem;margin-bottom:30px}
+      .services-grid{gap:14px}
+      .service{padding:22px}
+      .service h3{font-size:1.08rem}
+      .service-icon{width:42px;height:42px;margin-bottom:14px}
+      .service-icon svg{width:22px;height:22px}
+      .service p{font-size:.93rem}
+      .why-grid{gap:32px}
+      .why-points{gap:18px}
+      .why-point{gap:14px}
+      .why-point .num{width:36px;height:36px;font-size:.9rem}
+      .why-point h4{font-size:1rem}
+      .why-point p{font-size:.92rem}
+      .gallery-grid{gap:12px}
+      .coverage-grid{gap:14px}
+      .coverage-col h4{font-size:1rem}
+      .coverage-col ul{font-size:.92rem}
+      details.faq summary{padding:16px 18px;font-size:.97rem}
+      details.faq .faq-body{padding:0 18px 18px;font-size:.93rem}
+      .contact-grid{gap:32px}
+      .contact-info h2{font-size:1.55rem}
+      .contact-info p{font-size:.96rem;margin-bottom:22px}
+      .contact-method .ico{width:38px;height:38px}
+      .contact-method .value{font-size:.97rem}
+      form.contact-form{padding:22px}
+      footer{padding:36px 0 24px}
+      .footer-grid{gap:20px}
+      .footer-bottom{font-size:.78rem;margin-top:28px;padding-top:20px}
+    }
+    @media(max-width:380px){
+      .container{padding:0 16px}
+      .logo{font-size:.9rem}
+      .nav-cta{padding:7px 11px;font-size:.78rem}
+      .hero h1{font-size:1.6rem}
+      .hero p.lead{font-size:.94rem}
+      .hero-meta{font-size:.8rem}
+      .trust-item{font-size:.76rem}
+      .btn{padding:10px 14px;font-size:.88rem}
+    }
   </style>
 </head>
 <body>
