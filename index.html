@@ -164,7 +164,8 @@
     @media(min-width:880px){.why-grid{grid-template-columns:1fr 1.2fr}}
     #gallery{background:var(--bg)}
     .gallery-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))}
-    .gallery-card{aspect-ratio:4/3;border-radius:12px;overflow:hidden;position:relative;background:#2a2522;box-shadow:0 14px 30px -16px rgba(0,0,0,.35)}
+    .gallery-card{aspect-ratio:4/3;border-radius:12px;overflow:hidden;position:relative;background:#2a2522;box-shadow:0 14px 30px -16px rgba(0,0,0,.35);cursor:pointer;transition:transform .2s, box-shadow .2s}
+    .gallery-card:hover{transform:translateY(-3px);box-shadow:0 20px 38px -14px rgba(0,0,0,.4)}
     .gallery-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .gallery-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 50%)}
     .gallery-card .gallery-label{position:absolute;left:18px;bottom:16px;right:18px;color:#fff;font-size:.95rem;font-weight:600;letter-spacing:-.005em;z-index:2;text-shadow:0 1px 4px rgba(0,0,0,.6)}
@@ -219,7 +220,6 @@
     .mobile-call svg,.mobile-whatsapp svg{width:24px;height:24px}
     @media(min-width:880px){.mobile-actions{display:none}}
 
-    /* Mobile optimisation — uses padding-left/right separately so .nav doesn't override .container's horizontal padding */
     @media(max-width:700px){
       .container{padding-left:28px;padding-right:28px}
       .nav{padding-top:14px;padding-bottom:14px}
@@ -292,7 +292,7 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#why">Why us</a>
-        <a href="#gallery">Recent work</a>
+        <a href="/work">Our work</a>
         <a href="#coverage">Areas</a>
         <a href="#faq">FAQs</a>
       </nav>
@@ -377,14 +377,16 @@
       <div class="container">
         <div class="section-eyebrow">Recent work</div>
         <h2 class="section-title">Examples of the type of work we carry out</h2>
-        <p class="section-lead">We are currently building up the gallery for the website. Much of our previous work has been on private homes, contractor-led projects or properties where photos cannot be shared publicly. Where permission allows, we can show relevant examples privately when discussing your job.</p>
+        <p class="section-lead">A selection from our recent work — extensions, new builds, flint work and stonework across Hampshire, Berkshire and Surrey. Tap any photo to see the full gallery.</p>
         <div class="gallery-grid">
-          <div class="gallery-card"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&auto=format&fit=crop" alt="Brickwork on a house extension" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Double-storey extension — brick matched to the existing house</div></div>
-          <div class="gallery-card"><img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=800&q=80&auto=format&fit=crop" alt="New build brickwork" loading="lazy"><div class="gallery-meta">Berkshire</div><div class="gallery-label">New build — full brickwork package for main contractor</div></div>
-          <div class="gallery-card"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80&auto=format&fit=crop" alt="Brick wall detail" loading="lazy"><div class="gallery-meta">Private residential project</div><div class="gallery-label">Brickwork details kept confidential by request</div></div>
-          <div class="gallery-card"><img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80&auto=format&fit=crop" alt="Stone garden wall" loading="lazy"><div class="gallery-meta">Hampshire village</div><div class="gallery-label">Stone boundary wall, built to fit the surroundings</div></div>
+          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-09_5.jpg" alt="Country property orangery with new red brickwork, arched window and slate hipped roof — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Country property orangery — new brickwork &amp; lantern roof</div></a>
+          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-10_6.jpg" alt="Garden brickwork and flint work boundary wall with built-in outdoor fireplace — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Garden brickwork &amp; flint work — boundary, retaining wall and fireplace</div></a>
+          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-09.jpg" alt="Brick arch over doorway in yellow stock-brick London townhouse — heritage matching, Green's Brickwork" loading="lazy"><div class="gallery-meta">London</div><div class="gallery-label">Heritage brick arch on yellow stock-brick townhouse</div></a>
+          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-07_5.jpg" alt="Curved brick edging around sandstone patio at thatched cottage — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Curved brick edging on a thatched cottage patio</div></a>
+          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-08_7.jpg" alt="Substantial new build house with red brickwork, dormers and bay window — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">New build house — full red brickwork package</div></a>
+          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-11.jpg" alt="Single-storey rear extension with brick matched to existing house — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Single-storey rear extension — brick matched to existing</div></a>
         </div>
-        <p class="gallery-note"><em>Photos shown are representative — we'll send images of our own completed work on request.</em></p>
+        <p class="gallery-note"><a href="/work" style="color:var(--brick);font-weight:600">View all our work →</a> &nbsp;·&nbsp; <em>Tap any photo to see the full gallery.</em></p>
       </div>
     </section>
 
