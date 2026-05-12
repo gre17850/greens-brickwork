@@ -109,9 +109,9 @@
     body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .container{max-width:var(--max);margin:0 auto;padding-left:24px;padding-right:24px}
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;gap:12px}
     .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;white-space:nowrap}
     .logo span{color:var(--brick)}
     .nav-links{display:none;gap:28px;font-weight:500;font-size:.95rem}
@@ -142,7 +142,7 @@
     .section-eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brick);margin-bottom:12px}
     .section-title{font-size:clamp(1.6rem, 3.5vw, 2.4rem);line-height:1.18;letter-spacing:-.01em;font-weight:800;margin-bottom:16px;max-width:30ch}
     .section-lead{font-size:1.02rem;color:var(--ink-soft);max-width:62ch;margin-bottom:48px;line-height:1.6}
-    .trust-strip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
+    .trust-strip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:24px;padding-bottom:24px}
     .trust-row{display:grid;gap:16px;grid-template-columns:repeat(2, 1fr);align-items:center}
     .trust-item{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:500;color:var(--ink-soft)}
     .trust-item svg{width:18px;height:18px;color:var(--brick);flex-shrink:0}
@@ -219,10 +219,10 @@
     .mobile-call svg,.mobile-whatsapp svg{width:24px;height:24px}
     @media(min-width:880px){.mobile-actions{display:none}}
 
-    /* Mobile optimisation */
+    /* Mobile optimisation — uses padding-left/right separately so .nav doesn't override .container's horizontal padding */
     @media(max-width:700px){
-      .container{padding:0 28px}
-      .nav{padding:14px 0}
+      .container{padding-left:28px;padding-right:28px}
+      .nav{padding-top:14px;padding-bottom:14px}
       .logo{font-size:1.02rem}
       .nav-cta{padding:9px 15px;font-size:.85rem}
       .hero{padding:44px 0 60px}
@@ -238,7 +238,7 @@
       .hero-visual .placeholder-label > div:first-child{font-size:.66rem}
       .hero-visual .placeholder-label strong{font-size:1.1rem;line-height:1.3}
       section{padding:56px 0}
-      .trust-strip{padding:20px 0}
+      .trust-strip{padding-top:20px;padding-bottom:20px}
       .trust-row{gap:14px}
       .trust-item{font-size:.92rem;line-height:1.3;gap:9px}
       .section-title{font-size:1.6rem;line-height:1.2}
@@ -273,7 +273,7 @@
       .footer-bottom{font-size:.85rem;margin-top:28px;padding-top:20px}
     }
     @media(max-width:380px){
-      .container{padding:0 22px}
+      .container{padding-left:22px;padding-right:22px}
       .logo{font-size:.95rem}
       .nav-cta{padding:8px 13px;font-size:.8rem}
       .hero h1{font-size:1.7rem}
@@ -327,7 +327,7 @@
       </div>
     </section>
 
-    <section class="trust-strip" style="padding:24px 0">
+    <section class="trust-strip">
       <div class="container">
         <div class="trust-row">
           <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>Fully insured</div>
