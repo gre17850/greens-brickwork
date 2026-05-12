@@ -165,9 +165,9 @@
     #gallery{background:var(--bg)}
     .gallery-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))}
     .gallery-card{aspect-ratio:4/3;border-radius:12px;overflow:hidden;position:relative;background:#2a2522;box-shadow:0 14px 30px -16px rgba(0,0,0,.35);cursor:pointer;transition:transform .2s, box-shadow .2s}
-    .gallery-card:hover{transform:translateY(-3px);box-shadow:0 20px 38px -14px rgba(0,0,0,.4)}
-    .gallery-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .gallery-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 50%)}
+    .gallery-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px -16px rgba(0,0,0,.45)}
+    .gallery-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+    .gallery-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 50%);pointer-events:none}
     .gallery-card .gallery-label{position:absolute;left:18px;bottom:16px;right:18px;color:#fff;font-size:.95rem;font-weight:600;letter-spacing:-.005em;z-index:2;text-shadow:0 1px 4px rgba(0,0,0,.6)}
     .gallery-card .gallery-meta{position:absolute;top:16px;left:18px;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;z-index:2;background:rgba(0,0,0,.45);padding:4px 10px;border-radius:4px;backdrop-filter:blur(4px)}
     .gallery-note{margin-top:28px;text-align:center;color:var(--muted);font-size:.95rem}
@@ -220,6 +220,7 @@
     .mobile-call svg,.mobile-whatsapp svg{width:24px;height:24px}
     @media(min-width:880px){.mobile-actions{display:none}}
 
+    /* Mobile optimisation — uses padding-left/right separately so .nav doesn't override .container's horizontal padding */
     @media(max-width:700px){
       .container{padding-left:28px;padding-right:28px}
       .nav{padding-top:14px;padding-bottom:14px}
@@ -256,6 +257,7 @@
       .why-point h4{font-size:1.05rem}
       .why-point p{font-size:.98rem;line-height:1.55}
       .gallery-grid{gap:14px}
+      .gallery-card{aspect-ratio:1/1}
       .gallery-card .gallery-label{font-size:.95rem}
       .coverage-grid{gap:18px}
       .coverage-col h4{font-size:1.05rem}
@@ -281,6 +283,26 @@
       .hero-meta{font-size:.88rem;gap:12px}
       .trust-item{font-size:.87rem}
       .btn{padding:11px 16px;font-size:.93rem}
+    }
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    .lightbox .lb-close{position:absolute;top:16px;right:18px;color:#fff;background:rgba(255,255,255,.12);border:none;width:42px;height:42px;border-radius:50%;font-size:1.6rem;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+    .lightbox .lb-close:hover{background:rgba(255,255,255,.25)}
+    .lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.8rem;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);line-height:1}
+    .lightbox .lb-nav:hover{background:rgba(255,255,255,.28)}
+    .lightbox .lb-prev{left:14px}
+    .lightbox .lb-next{right:14px}
+    .lightbox .lb-caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#fff;font-size:.92rem;background:rgba(0,0,0,.55);padding:8px 18px;border-radius:20px;max-width:88%;text-align:center;line-height:1.4}
+    .lightbox .lb-counter{position:absolute;top:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.85rem;letter-spacing:.06em}
+    @media(max-width:700px){
+      .lightbox{padding:12px}
+      .lightbox .lb-nav{width:40px;height:40px;font-size:1.5rem}
+      .lightbox .lb-prev{left:8px}
+      .lightbox .lb-next{right:8px}
+      .lightbox .lb-caption{font-size:.85rem;padding:7px 14px;bottom:18px}
     }
   </style>
 </head>
@@ -377,16 +399,36 @@
       <div class="container">
         <div class="section-eyebrow">Recent work</div>
         <h2 class="section-title">Examples of the type of work we carry out</h2>
-        <p class="section-lead">A selection from our recent work — extensions, new builds, flint work and stonework across Hampshire, Berkshire and Surrey. Tap any photo to see the full gallery.</p>
-        <div class="gallery-grid">
-          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-09_5.jpg" alt="Country property orangery with new red brickwork, arched window and slate hipped roof — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Country property orangery — new brickwork &amp; lantern roof</div></a>
-          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-10_6.jpg" alt="Garden brickwork and flint work boundary wall with built-in outdoor fireplace — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Garden brickwork &amp; flint work — boundary, retaining wall and fireplace</div></a>
-          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-09.jpg" alt="Brick arch over doorway in yellow stock-brick London townhouse — heritage matching, Green's Brickwork" loading="lazy"><div class="gallery-meta">London</div><div class="gallery-label">Heritage brick arch on yellow stock-brick townhouse</div></a>
-          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-07_5.jpg" alt="Curved brick edging around sandstone patio at thatched cottage — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Curved brick edging on a thatched cottage patio</div></a>
-          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-08_7.jpg" alt="Substantial new build house with red brickwork, dormers and bay window — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">New build house — full red brickwork package</div></a>
-          <a href="/work" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-11.jpg" alt="Single-storey rear extension with brick matched to existing house — Green's Brickwork, Hampshire" loading="lazy"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Single-storey rear extension — brick matched to existing</div></a>
+        <p class="section-lead">A selection from our recent work — extensions, new builds, flint work and stonework across Hampshire, Berkshire and Surrey. Tap any photo to view it full size.</p>
+
+        <!--
+          ============================================================
+          HOW TO CHANGE A HOMEPAGE PHOTO
+          ============================================================
+          Each card below has three things you might want to edit:
+            1. The image filename — change "photos/PHOTO-XXX.jpg" to the
+               new filename from the /photos/ folder
+            2. The alt="..." text — describes the photo for Google + screen
+               readers (helps SEO, keep it descriptive)
+            3. The <div class="gallery-label">...</div> caption that shows
+               on top of the photo
+          To re-order, just move the whole <a>…</a> block up or down.
+          To focus the cropped view on a different part of the photo,
+          add  style="object-position:center 20%"  (lower number = show
+          more of the top; try 10%, 35%, 50%).
+          Save the file and commit — the site updates in ~30 seconds.
+          ============================================================
+        -->
+
+        <div class="gallery-grid" id="homeGallery">
+          <a href="photos/PHOTO-2026-05-12-11-39-08_11.jpg" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-08_11.jpg" alt="New build red brick house with multi-pitched tile roof, dormers and solar panels — Green's Brickwork, Hampshire" loading="lazy" style="object-position:center 45%"><div class="gallery-meta">Hampshire</div><div class="gallery-label">New build house — full red brickwork package</div></a>
+          <a href="photos/PHOTO-2026-05-12-11-39-08_13.jpg" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-08_13.jpg" alt="Yellow London stock brick townhouse with curved bay window and sash windows — heritage brickwork by Green's Brickwork" loading="lazy" style="object-position:center 30%"><div class="gallery-meta">London</div><div class="gallery-label">Yellow stock brick townhouse — curved bay &amp; heritage matching</div></a>
+          <a href="photos/PHOTO-2026-05-12-11-39-07_3.jpg" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-07_3.jpg" alt="Two-storey new build house with red brickwork and traditional flint panels — Green's Brickwork, Hampshire" loading="lazy" style="object-position:center 40%"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Two-storey new build — red brick &amp; traditional flint panels</div></a>
+          <a href="photos/PHOTO-2026-05-12-11-39-07_10.jpg" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-07_10.jpg" alt="Thatched cottage with sandstone patio and curved brick edging — Green's Brickwork, Hampshire" loading="lazy" style="object-position:center 45%"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Thatched cottage — sandstone patio with curved brick edging</div></a>
+          <a href="photos/PHOTO-2026-05-12-11-39-07_2.jpg" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-07_2.jpg" alt="New build red brick gable with apex window and clay tile roof — Green's Brickwork, Hampshire" loading="lazy" style="object-position:center 50%"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Red brick gable detail — new build, Hampshire</div></a>
+          <a href="photos/PHOTO-2026-05-12-11-39-10_6.jpg" class="gallery-card" style="text-decoration:none"><img src="photos/PHOTO-2026-05-12-11-39-10_6.jpg" alt="Garden brickwork and flint work boundary wall with built-in outdoor fireplace — Green's Brickwork, Hampshire" loading="lazy" style="object-position:center 50%"><div class="gallery-meta">Hampshire</div><div class="gallery-label">Garden brickwork &amp; flint work — boundary, retaining wall and fireplace</div></a>
         </div>
-        <p class="gallery-note"><a href="/work" style="color:var(--brick);font-weight:600">View all our work →</a> &nbsp;·&nbsp; <em>Tap any photo to see the full gallery.</em></p>
+        <p class="gallery-note"><a href="/work" style="color:var(--brick);font-weight:600">View all 67 photos →</a> &nbsp;·&nbsp; <em>Tap any photo above to view it full size.</em></p>
       </div>
     </section>
 
@@ -465,6 +507,15 @@
 
   </main>
 
+  <div class="lightbox" id="lb" role="dialog" aria-label="Photo viewer" aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Close" onclick="closeLb()">×</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous photo" onclick="prevLb()">‹</button>
+    <button class="lb-nav lb-next" type="button" aria-label="Next photo" onclick="nextLb()">›</button>
+    <div class="lb-counter" id="lbCounter"></div>
+    <img id="lbImg" src="" alt="">
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -509,6 +560,64 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightbox for homepage gallery
+    (function(){
+      const cards = document.querySelectorAll('#homeGallery .gallery-card');
+      if (!cards.length) return;
+      const items = Array.from(cards).map(c => ({
+        src: c.getAttribute('href'),
+        alt: c.querySelector('img').alt,
+        label: c.querySelector('.gallery-label').textContent
+      }));
+      const lb = document.getElementById('lb');
+      const lbImg = document.getElementById('lbImg');
+      const lbCaption = document.getElementById('lbCaption');
+      const lbCounter = document.getElementById('lbCounter');
+      let idx = 0;
+      function show(i){
+        idx = (i + items.length) % items.length;
+        lbImg.src = items[idx].src;
+        lbImg.alt = items[idx].alt;
+        lbCaption.textContent = items[idx].label;
+        lbCounter.textContent = (idx + 1) + ' / ' + items.length;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      window.closeLb = function(){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      };
+      window.nextLb = function(){ show(idx + 1); };
+      window.prevLb = function(){ show(idx - 1); };
+      cards.forEach((c, i) => {
+        c.addEventListener('click', function(e){
+          e.preventDefault();
+          show(i);
+        });
+      });
+      lb.addEventListener('click', function(e){
+        if (e.target === lb) closeLb();
+      });
+      document.addEventListener('keydown', function(e){
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowRight') nextLb();
+        else if (e.key === 'ArrowLeft') prevLb();
+      });
+      // Touch swipe support
+      let touchX = null;
+      lb.addEventListener('touchstart', e => { touchX = e.changedTouches[0].screenX; }, {passive:true});
+      lb.addEventListener('touchend', e => {
+        if (touchX === null) return;
+        const dx = e.changedTouches[0].screenX - touchX;
+        if (Math.abs(dx) > 50) { dx < 0 ? nextLb() : prevLb(); }
+        touchX = null;
+      }, {passive:true});
+    })();
+
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
     form.addEventListener('submit', async function(e) {
