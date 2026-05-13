@@ -42,3 +42,5 @@ Based near Odiham and Hook, serving:
 - Winchester area: https://greens-brickwork.vercel.app/winchester
 - Camberley, Ascot & Windsor area: https://greens-brickwork.vercel.app/camberley
 - Reading & Berkshire: https://greens-brickwork.vercel.app/reading
+- Guildford & Surrey: https://greens-brickwork.vercel.app/guildford
+- Newbury & west Berkshire: https://greens-brickwork.vercel.app/newbury
