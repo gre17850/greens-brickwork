@@ -38,3 +38,4 @@ Based near Odiham and Hook, serving:
 - Homepage: https://greens-brickwork.vercel.app/
 - Work gallery: https://greens-brickwork.vercel.app/work
 - Basingstoke area: https://greens-brickwork.vercel.app/basingstoke
+- Fleet & Farnham area: https://greens-brickwork.vercel.app/fleet
