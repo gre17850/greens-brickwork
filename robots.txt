@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://greens-brickwork.vercel.app/sitemap.xml
+Sitemap: https://www.greensbrickwork.co.uk/sitemap.xml
