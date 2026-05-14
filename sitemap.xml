@@ -55,4 +55,106 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/repointing-costs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/bricklaying-costs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/garden-wall-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/matching-brickwork</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/planning-permission-garden-wall</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/choosing-a-bricklayer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/what-is-flint-work</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/house-extension-brickwork</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/pointing-vs-repointing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/how-long-does-brickwork-last</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/house-extension-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/planning-permission-house-extension</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/kitchen-extension-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/chimney-repair-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/extend-or-move-house</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.greensbrickwork.co.uk/guides/how-to-plan-a-house-extension</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
