@@ -1,4 +1,10 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "greens-brickwork.vercel.app" }],
+      "destination": "https://www.greensbrickwork.co.uk/$1",
+      "permanent": true
+    }
+  ]
 }
