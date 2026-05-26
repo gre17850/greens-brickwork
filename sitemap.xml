@@ -157,4 +157,5 @@
     <priority>0.8</priority>
   </url>
 
+  <url><loc>https://www.greensbrickwork.co.uk/privacy</loc><changefreq>yearly</changefreq><priority>0.1</priority></url>
 </urlset>
