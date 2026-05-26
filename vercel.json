@@ -4,16 +4,31 @@
   "headers": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "greens-brickwork.vercel.app" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "has": [
+        {
+          "type": "host",
+          "value": "greens-brickwork.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "greens-brickwork.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "greens-brickwork.vercel.app"
+        }
+      ],
       "destination": "https://www.greensbrickwork.co.uk/$1",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
