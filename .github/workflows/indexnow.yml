@@ -1,0 +1,18 @@
+name: IndexNow daily
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          curl -s https://www.greensbrickwork.co.uk/sitemap.xml \
+            | grep -oE '<loc>[^<]+</loc>' | sed -E 's#</?loc>##g' \
+            | jq -R . | jq -s '{host:"www.greensbrickwork.co.uk",key:"748e0f9be18800620c5860632899c873",keyLocation:"https://www.greensbrickwork.co.uk/748e0f9be18800620c5860632899c873.txt",urlList:.}' \
+            > payload.json
+          echo "Submitting $(jq '.urlList | length' payload.json) URLs to IndexNow"
+          curl -s -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json" --data @payload.json -w "\nHTTP %{http_code}\n"
